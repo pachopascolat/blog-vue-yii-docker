@@ -129,6 +129,7 @@
             // },
             getModels: function(){
                 var self = this;
+                self.errors = {};
                 // var filters = self.normalizeFilters();
                 axios.get('/apiv1/'+self.modelname+'?page='+self.currentPage,{params:self.filter})
                     .then(function (response) {
@@ -138,6 +139,7 @@
                         self.pagination.totalPages = response.headers['x-pagination-page-count'];
                         self.pagination.perPage = response.headers['x-pagination-per-page'];
                         self.models = response.data;
+
                     })
                     .catch(function (error) {
                         // handle error
