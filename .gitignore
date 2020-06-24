@@ -1,0 +1,5 @@
+.DS_Store
+mysqldata/*
+src/composer/*
+.vscode
+.idea
